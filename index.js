@@ -1,6 +1,21 @@
-function hasTargetSum(array, target) {
+
   // Write your algorithm here
+  function hasTargetSum(array, target) {
+  // loop through all numbers in the array
+  for (let i = 0; i < array.length; i++) {
+    // loop through all numbers that come after the current number
+    for (let j = i + 1; j < array.length; j++) {
+      // check if the current number and the next number add up to the target
+      if (array[i] + array[j] == target) {
+        return true;
+      }
+    }
+  }
+
+  // if we've checked all possible pairs and haven't found any that add up to the target, return false
+  return false;
 }
+
 
 /* 
   Write the Big O time complexity of your function here
